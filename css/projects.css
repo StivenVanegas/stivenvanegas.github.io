@@ -49,19 +49,17 @@ a:hover{
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .projects {
     margin-top: 4rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 2rem;
 }
+
+
 
 .li1 {
     font-size: 1.2rem;
@@ -77,6 +75,44 @@ a:hover{
 
 .span3 {
     font-size: 1.5rem;
+}
+
+h2 ,h3 {
+    margin: 0;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "card-header card-header"
+                        "card-back card-front";
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.card-header{
+    background-color: rgba(255, 255, 255, 0.1);
+    grid-area: card-header;
+    padding: 0.5rem;
+}
+
+.card-back {
+    background-color: rgba(255, 255, 255, 0.1);
+    grid-area: card-back;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front {
+    background-color: rgba(255, 255, 255, 0.1);
+    grid-area: card-front;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media (min-width: 320px) {
@@ -103,11 +139,17 @@ a:hover{
     .span3 {
         font-size: 1.3rem;
     }
+
+    .card {
+        grid-template-areas: "card-header card-header"
+                            "card-back card-back"
+                            "card-front card-front"; 
+    }
 }
 
 @media (min-width: 768px) {
     .section{
-        width: 60%;
+        width: 80%;
     }
 
     .header h1 {
@@ -128,5 +170,10 @@ a:hover{
     
     .span3 {
         font-size: 1.5rem;
+    }
+
+    .card {
+        grid-template-areas: "card-header card-header"
+                            "card-back card-front"; 
     }
 }
